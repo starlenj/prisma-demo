@@ -1,0 +1,78 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id              Int      @id @default(autoincrement())
+  phone           String   @unique
+  name            String
+  email           String   @default("null")
+  lastName        String   @default("null")
+  password        String
+  picture         String   @default("null")
+  status          Int      @default(0)
+  validation_date DateTime @default(now())
+}
+
+model Merchant {
+  id              Int      @id @default(autoincrement())
+  email           String   @unique
+  password        String
+  status          Int
+  profileId       Int      @default(0)
+  optionsId       Int      @default(0)
+  menuId          Int      @default(0)
+  validation_date DateTime
+  phone           String   @unique
+}
+
+model MerchantProfile {
+  id           Int    @id @default(autoincrement())
+  picture      String
+  instagram    String
+  description  String
+  openingTimes String
+  status       Int
+}
+
+model MerchantOptions {
+  id                   Int    @id @default(autoincrement())
+  name                 String
+  punchCount           Int
+  punchIcon            String
+  punchBackgroundImage String
+  downContext          String
+  validItemDate        String
+  status               Int
+}
+
+model OrderHeader {
+  id         Int @id @default(autoincrement())
+  merchantId Int
+  customerId Int
+  orderId    Int @unique
+  status     Int
+
+}
+
+model OrderBody {
+  id        Int @id @default(autoincrement())
+  headerId  Int @unique
+  productId Int
+  quantity  Int
+  status    Int
+}
+
+model MerchantMenu {
+  id          Int    @id @default(autoincrement())
+  merchantId  Int
+  title       String
+  description String
+  picture     String
+  status      Int
+}

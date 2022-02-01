@@ -1,0 +1,8 @@
+type MerchantMenu {
+  id: Number
+  merchantId: Number
+  title: String
+  description: String
+  picture: String
+  status: Number
+}

@@ -1,0 +1,9 @@
+type MerchantProfile {
+  id: Number
+  phone: String
+  merchantId: Number
+  picture: String
+  instagram: String
+  description: String
+  openingTimes: String
+}

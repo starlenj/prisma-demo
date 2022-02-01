@@ -1,0 +1,84 @@
+type Query {
+  """Get all user query"""
+  users: [User]
+}
+
+"""A user"""
+type User {
+  """id of the author"""
+  id: ID!
+
+  """phone a user"""
+  phone: String
+
+  """name of user"""
+  name: String
+
+  """mail of user"""
+  email: String
+
+  """lastname of user"""
+  lastName: String
+
+  """[password] of user"""
+  password: String
+
+  """picture of user"""
+  picture: String
+
+  """picture of user"""
+  validation_date: String
+
+  """status of user"""
+  status: Int
+}
+
+type Mutation {
+  """create User"""
+  createUser(input: CreateUserInput): User
+
+  """create User"""
+  updateUser(input: CreateMerchantInput): User
+
+  """User Auth"""
+  authUser(input: AuthUserInptu): User
+
+  """create merchant"""
+  createMerchant(input: CreateMerchantInput): User
+
+  """update Merchant"""
+  updateMerchant(input: CreateMerchantInput): User
+}
+
+"""Create User input"""
+input CreateUserInput {
+  """The user name"""
+  name: String!
+
+  """The user phone"""
+  phone: String!
+
+  """The user password"""
+  password: String!
+}
+
+"""Create Merchant input"""
+input CreateMerchantInput {
+  """The Merchant name"""
+  name: String!
+
+  """The Merchant phone"""
+  phone: String!
+
+  """The Merchant password"""
+  password: String!
+}
+
+"""User Auth input"""
+input AuthUserInptu {
+  """The user phone"""
+  phone: String!
+
+  """The user password"""
+  password: String!
+}

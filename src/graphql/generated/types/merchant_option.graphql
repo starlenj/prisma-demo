@@ -1,0 +1,9 @@
+type MerchantOptions {
+  id: Number
+  merchantId: Number
+  punchCount: String
+  punchIcon: String
+  downContext: String
+  validItmsDate: String
+  punchBackgroundImage: String
+}

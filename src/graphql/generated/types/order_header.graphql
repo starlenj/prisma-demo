@@ -1,0 +1,6 @@
+type OrderHeader {
+  id: Number
+  merchantId: Number
+  customerId: Number
+  orderId: Number
+}

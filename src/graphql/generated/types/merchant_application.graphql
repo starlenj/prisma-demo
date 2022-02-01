@@ -1,0 +1,7 @@
+type MerchantApplication {
+  id: Number
+  merchantId: Number
+  taxOffice: String
+  taxId: String
+  name: String
+}

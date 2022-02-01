@@ -1,0 +1,7 @@
+type OrderBody {
+  id: Number
+  headerId: Number
+  productId: Number
+  quantity: Number
+  status: Number
+}

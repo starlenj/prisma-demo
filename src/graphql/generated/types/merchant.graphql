@@ -1,0 +1,9 @@
+type Merchant {
+  id: Number
+  email: String
+  email: String
+  password: String
+  phone: String
+  status: Number
+  validation_date: String
+}
